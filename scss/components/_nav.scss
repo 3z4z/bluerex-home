@@ -1,0 +1,41 @@
+.nav-container {
+  padding: 1rem;
+
+  //   @include breakpoint(xl, min) {
+  //     max-width: 1200px;
+  //   }
+
+  .nav-logo {
+    width: 100px;
+    img {
+      width: 100%;
+    }
+    @include breakpoint(md, min) {
+      width: 200px;
+    }
+  }
+  .nav-toggler {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    list-style: none;
+    .nav-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba($white, 65%);
+      &.active,
+      &:hover:not(.active) {
+        color: $white;
+      }
+    }
+  }
+}

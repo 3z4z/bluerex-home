@@ -1,0 +1,87 @@
+@import "../scss/mixins/breakpoints";
+@import "../scss/functions/color-shade";
+@import "../scss/variables/colors";
+@import "../scss/variables/fonts";
+@import "../scss/components/scrollbar";
+@import "../scss/components/nav";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.dashboard {
+  background-image: url(../assets/images/banner-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  .container {
+    margin-top: 5rem;
+    flex-grow: 1;
+    background-image: url(../assets/images/banner-man.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    .dashboard-content {
+      padding-top: 0rem;
+      height: 100%;
+      max-width: 500px;
+      @include breakpoint(xxl, min) {
+        padding-top: 10rem;
+      }
+      .short-title {
+        font-family: $parisienne;
+        font-style: italic;
+        @include breakpoint(xl, min) {
+          font-size: 2rem;
+        }
+      }
+      .button-group {
+        margin-top: 1.75rem;
+        margin-bottom: 1.75rem;
+        a {
+          padding: 0.65rem 1.75rem 0.75rem;
+          box-shadow: 0 4px 16px 0 rgba($black, 35%);
+          &.btn-primary {
+            background-color: $primary;
+            border-color: $primary;
+            &:hover {
+              background-color: shade($primary, 25%);
+              border-color: shade($primary, 25%);
+            }
+          }
+          &.btn-secondary {
+            background-color: $secondary;
+            border-color: $secondary;
+            &:hover {
+              background-color: shade($secondary, 25%);
+              border-color: shade($secondary, 25%);
+            }
+          }
+          &:first-child {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about-me {
+  background-color: #e4acac;
+}
+
+.my-services {
+  background-color: #c97d7d;
+}
+
+.portfolio {
+  background-color: #cd6a6a;
+}
